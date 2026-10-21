@@ -3,25 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Arvyn's Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 40px;
-            text-align: center;
+            padding: 0;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
         h1 {
-            color: #0076ff;
+            color: #1a73e8;
+            margin-bottom: 12px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #5f6368;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1557b0;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Website</h1>
-    <p>If you see this message, your page is working correctly!</p>
+    <div class="card">
+        <h1>Welcome to My Site</h1>
+        <p id="status-text">Your HTML, CSS, and JavaScript are running successfully!</p>
+        <button onclick="changeText()">Click Me</button>
+    </div>
+
+    <!-- Inline JavaScript placed right before </body> -->
+    <script>
+        function changeText() {
+            const status = document.getElementById("status-text");
+            status.innerText = "The script button is working properly!";
+            status.style.color = "#34a853";
+        }
+    </script>
 
 </body>
 </html>
